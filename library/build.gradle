@@ -1,0 +1,17 @@
+apply plugin: 'java-library'
+
+sourceCompatibility = 1.7  // App Engine Standard uses Java 7
+targetCompatibility = 1.7  // App Engine Standard uses Java 7
+
+dependencies {
+    testCompile 'junit:junit:4.12'
+}
+
+version = '0.1.0'
+
+jar {
+    manifest {
+        attributes('Implementation-Title': project.name,
+                'Implementation-Version': project.version)
+    }
+}
