@@ -5,6 +5,7 @@ package com.frybits.util.conversion;
  * Created by Pablo Baxter (Github: pablobaxter)
  */
 
+//TODO: Create documentation for this
 public enum DistanceUnit implements Unit<DistanceUnit> {
 
     METER {
@@ -15,7 +16,7 @@ public enum DistanceUnit implements Unit<DistanceUnit> {
 
         @Override
         protected double baseUnit() {
-            return ((byte) NANOMETER.baseUnit()) * Math.pow(10, 9);
+            return  (long) (NANOMETER.baseUnit() * Math.pow(10, 9));
         }
     },
 
@@ -27,7 +28,7 @@ public enum DistanceUnit implements Unit<DistanceUnit> {
 
         @Override
         protected double baseUnit() {
-            return ((byte) NANOMETER.baseUnit()) * Math.pow(10, 7);
+            return (long) (NANOMETER.baseUnit() * Math.pow(10, 7));
         }
     },
 
@@ -39,7 +40,7 @@ public enum DistanceUnit implements Unit<DistanceUnit> {
 
         @Override
         protected double baseUnit() {
-            return ((byte) NANOMETER.baseUnit()) * Math.pow(10, 6);
+            return (long) (NANOMETER.baseUnit() * Math.pow(10, 6));
         }
     },
 
@@ -51,7 +52,7 @@ public enum DistanceUnit implements Unit<DistanceUnit> {
 
         @Override
         protected double baseUnit() {
-            return ((byte) NANOMETER.baseUnit()) * Math.pow(10, 3);
+            return (long) (NANOMETER.baseUnit() * Math.pow(10, 3));
         }
     },
 
@@ -75,7 +76,7 @@ public enum DistanceUnit implements Unit<DistanceUnit> {
 
         @Override
         protected double baseUnit() {
-            return ((long) METER.baseUnit()) * Math.pow(10, 3);
+            return (long) (METER.baseUnit() * Math.pow(10, 3));
         }
     },
 
@@ -88,7 +89,7 @@ public enum DistanceUnit implements Unit<DistanceUnit> {
         @Override
         protected double baseUnit() {
             //According to https://www.iau.org/static/resolutions/IAU2012_English.pdf
-            return ((long) METER.baseUnit()) * 149597870700L;
+            return METER.baseUnit() * 149597870700L;
         }
     },
 
@@ -100,7 +101,7 @@ public enum DistanceUnit implements Unit<DistanceUnit> {
 
         @Override
         protected double baseUnit() {
-            return ((long) METER.baseUnit()) * 9460730472580800.0;
+            return METER.baseUnit() * 9460730472580800.0;
         }
     },
 
@@ -124,7 +125,7 @@ public enum DistanceUnit implements Unit<DistanceUnit> {
 
         @Override
         protected double baseUnit() {
-            return ((byte) NANOMETER.baseUnit()) * 2.54E7;
+            return (long) (NANOMETER.baseUnit() * 2.54E7);
         }
     },
 
@@ -136,7 +137,7 @@ public enum DistanceUnit implements Unit<DistanceUnit> {
 
         @Override
         protected double baseUnit() {
-            return ((long) INCH.baseUnit()) * 12;
+            return (long) (INCH.baseUnit() * 12);
         }
     },
 
@@ -148,7 +149,7 @@ public enum DistanceUnit implements Unit<DistanceUnit> {
 
         @Override
         protected double baseUnit() {
-            return ((long) FOOT.baseUnit()) * 3;
+            return (long) (FOOT.baseUnit() * 3);
         }
     },
 
@@ -160,7 +161,7 @@ public enum DistanceUnit implements Unit<DistanceUnit> {
 
         @Override
         protected double baseUnit() {
-            return ((long) YARD.baseUnit()) * 22;
+            return (long) (YARD.baseUnit() * 22);
         }
     },
 
@@ -172,7 +173,7 @@ public enum DistanceUnit implements Unit<DistanceUnit> {
 
         @Override
         protected double baseUnit() {
-            return ((long) CHAIN.baseUnit()) * 10;
+            return (long) (CHAIN.baseUnit() * 10);
         }
     },
 
@@ -184,7 +185,7 @@ public enum DistanceUnit implements Unit<DistanceUnit> {
 
         @Override
         protected double baseUnit() {
-            return ((long) YARD.baseUnit()) * 1760;
+            return (long) (YARD.baseUnit() * 1760);
         }
     };
 
