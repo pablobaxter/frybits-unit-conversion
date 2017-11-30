@@ -7,10 +7,10 @@ package com.frybits.util.conversion;
 
 public enum TimeUnit implements Unit<TimeUnit> {
 
-    NANOSECONDS {
+    NANOSECOND {
         @Override
         public double convert(double source, TimeUnit unit) {
-            return 0;
+            return unit.toNanoseconds(source);
         }
 
         @Override
@@ -22,43 +22,43 @@ public enum TimeUnit implements Unit<TimeUnit> {
     MICROSECOND {
         @Override
         public double convert(double source, TimeUnit unit) {
-            return 0;
+            return unit.toMicroseconds(source);
         }
 
         @Override
         protected double baseUnit() {
-            return (long) (NANOSECONDS.baseUnit() * Math.pow(10, 3));
+            return (long) (NANOSECOND.baseUnit() * 1000);
         }
     },
 
     MILLISECOND {
         @Override
         public double convert(double source, TimeUnit unit) {
-            return 0;
+            return unit.toMilliseconds(source);
         }
 
         @Override
         protected double baseUnit() {
-            return (long) (NANOSECONDS.baseUnit() * Math.pow(10, 6));
+            return (long) (NANOSECOND.baseUnit() * 1000000);
         }
     },
 
     SECOND {
         @Override
         public double convert(double source, TimeUnit unit) {
-            return 0;
+            return unit.toSeconds(source);
         }
 
         @Override
         protected double baseUnit() {
-            return (long) (NANOSECONDS.baseUnit() * Math.pow(10, 9));
+            return (long) (NANOSECOND.baseUnit() * 1000000000);
         }
     },
 
     MINUTE {
         @Override
         public double convert(double source, TimeUnit unit) {
-            return 0;
+            return unit.toMinutes(source);
         }
 
         @Override
@@ -70,7 +70,7 @@ public enum TimeUnit implements Unit<TimeUnit> {
     HOUR {
         @Override
         public double convert(double source, TimeUnit unit) {
-            return 0;
+            return unit.toHours(source);
         }
 
         @Override
@@ -82,7 +82,7 @@ public enum TimeUnit implements Unit<TimeUnit> {
     DAY {
         @Override
         public double convert(double source, TimeUnit unit) {
-            return 0;
+            return unit.toDays(source);
         }
 
         @Override
@@ -93,7 +93,7 @@ public enum TimeUnit implements Unit<TimeUnit> {
 
     public double toNanoseconds(double measurement) {
         double base = baseUnit();
-        long val = (long) NANOSECONDS.baseUnit();
+        long val = (long) NANOSECOND.baseUnit();
         return measurement * (base / val);
     }
 
